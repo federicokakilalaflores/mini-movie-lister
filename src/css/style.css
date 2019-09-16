@@ -1,0 +1,68 @@
+/*  index.html style  */
+:root{
+    --primary-color:rgba(200, 40,60);
+}
+
+body{
+    background-color: rgba(0,0,0,0.95);
+}
+
+nav.navbar{
+    border-bottom: 3px solid var(--primary-color);
+    background: -webkit-linear-gradient(-45deg,  var(--primary-color) 10%, black 70%);
+    background: linear-gradient(-45deg,  var(--primary-color) 10%, black 70%);
+}
+
+#logo{
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+#logo span{
+    color: var(--primary-color);
+}
+
+#searchInput{
+    width: 75%;
+    margin: auto;
+}
+
+.jumbotron-gradient{
+    position: relative;
+    background-image: url("../../build/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 50%;
+    z-index: 1;
+}
+
+.jumbotron-gradient::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  linear-gradient(-45deg,  var(--primary-color) 10%, black 70%),
+                -webkit-linear-gradient(-15deg,  var(--primary-color) 10%, black 60%);
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.card{
+    border-bottom: 4px solid var(--primary-color);
+}
+
+footer{
+    background-color:  black;
+}
+
+/*  movie.html style  */
+
+
+
+@media screen and (max-width: 768px){
+    #searchInput{
+        width: 100%;
+    }
+}
