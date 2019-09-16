@@ -1,16 +1,21 @@
-$(function(){
-    var itemPerPage = 4;
+
+var initPagination = function(){
+    var itemPerPage = 8;
     var totalItem = $(".pagination .item").length;
     var totalPage = Math.ceil((totalItem / itemPerPage)); 
     var activePage = 1;
+    var pagenum = "";
 
     // hide the rest of element
     $(".pagination .item:gt(" + (itemPerPage - 1) + ")").hide();
 
-    for(var i=totalPage; i >= 1; i--){ 
-       $('.pagination-btns .prev-btn')
-       .after('<li class="page-item page-num" data-page='+ i +'><a href="#" class="page-link">'+ i +'</a></li>');
+    // insert page numbers
+    pagenum += '<li class="page-item prev-btn"><a href="#" class="page-link">Prev</a></li>';
+    for(var i=1; i <= totalPage; i++){ 
+        pagenum += '<li class="page-item page-num" data-page='+ i +'><a href="#" class="page-link">'+ i +'</a></li>'
     } 
+    pagenum += '<li class="page-item next-btn"><a href="#" class="page-link">Next</a></li>';
+    $('.pagination-btns').html(pagenum);
 
     // set active to page 1 by default
     $(".page-item[data-page="+ activePage +"]").addClass("active");
@@ -41,5 +46,5 @@ $(function(){
         $(".page-num:nth-child("+ (parseInt(activePage) + 1) +")").addClass("active");
 
     });
+}   
 
-});

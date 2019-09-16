@@ -45,12 +45,16 @@ nav.navbar{
     height: 100%;
     background:  linear-gradient(-45deg,  var(--primary-color) 10%, black 70%),
                 -webkit-linear-gradient(-15deg,  var(--primary-color) 10%, black 60%);
-    opacity: 0.9;
+    opacity: 0.75;
     z-index: -1;
 }
 
 .card{
     border-bottom: 4px solid var(--primary-color);
+}
+
+.card img{
+    height: 400px;
 }
 
 footer{
