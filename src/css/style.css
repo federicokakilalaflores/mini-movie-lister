@@ -51,6 +51,7 @@ nav.navbar{
 
 .card{
     border-bottom: 4px solid var(--primary-color);
+    text-align:center;
 }
 
 .card img{
@@ -62,8 +63,37 @@ footer{
 }
 
 /*  movie.html style  */
+div.movie, div.overview{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem; 
+}
 
+#img-movie{
+    width: 100%;
+}
 
+li.movie-details{
+    background-color: #111;
+    color: #eee;
+}
+
+li.movie-details span{
+    color: #aaa;
+    margin-left: .7rem;
+}
+
+.pr-logo{
+    background-color: rgba(70, 70, 70);
+    border-radius: 7px;
+}
+
+.muted-white{
+    color: rgba(210,210,210);
+}
+
+#com-logo{
+    width: 100%;
+}    
 
 @media screen and (max-width: 768px){
     #searchInput{
