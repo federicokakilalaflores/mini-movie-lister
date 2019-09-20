@@ -49,6 +49,11 @@ nav.navbar{
     z-index: -1;
 }
 
+.loader{
+    height: 60px;
+    width: 60px; 
+}
+
 .card{
     border-bottom: 4px solid var(--primary-color);
     text-align:center;
@@ -63,6 +68,11 @@ footer{
 }
 
 /*  movie.html style  */
+
+.movie{
+    text-align: center;
+}
+
 div.movie, div.overview{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding: 1.5rem; 
@@ -99,4 +109,15 @@ li.movie-details span{
     #searchInput{
         width: 100%;
     }
+
+    .card img{
+        height: auto;
+    }
+
+    .btn-responsive{
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
+
 }

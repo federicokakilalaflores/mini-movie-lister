@@ -8,6 +8,9 @@ $(function(){
         $.ajax({
             url: "http://api.themoviedb.org/3/search/movie?api_key=373f333eb25d568d2a803ea7d3afb176&query=" + searchText, 
             type: "GET",
+            beforeSend: function(){
+                $("#movies").html('<div class="loader mr-auto ml-auto mb-5 spinner-border text-danger"></div>'); 
+            },
             success: function(response){
                 displayMovies(response);
             }
@@ -103,7 +106,7 @@ $(function(){
         </div>
 
         <div class="row mt-4">
-            <button class="btn btn-warning" onclick="history.back()">Back to Search</button>
+            <button class="btn btn-warning btn-responsive" onclick="history.back()">Back to Search</button>
         </div>
         `;
 
