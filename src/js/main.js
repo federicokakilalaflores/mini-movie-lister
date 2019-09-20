@@ -6,7 +6,7 @@ $(function(){
 
     function getSearchMovies(searchText = "a"){
         $.ajax({
-            url: "http://api.themoviedb.org/3/search/movie?api_key=373f333eb25d568d2a803ea7d3afb176&query=" + searchText, 
+            url: "https://api.themoviedb.org/3/search/movie?api_key=373f333eb25d568d2a803ea7d3afb176&query=" + searchText, 
             type: "GET",
             beforeSend: function(){
                 $("#movies").html('<div class="loader mr-auto ml-auto mb-5 spinner-border text-danger"></div>'); 
@@ -28,7 +28,7 @@ $(function(){
             output += `
             <div class="col-md-3">
             <div class="card bg-dark mb-3 item">
-                <img class="card-img-top" src=" http://image.tmdb.org/t/p/w185/${movie.poster_path}">
+                <img class="card-img-top" src=" https://image.tmdb.org/t/p/w185/${movie.poster_path}">
                 <div class="card-body">
                   <h4 class="card-title text-white">${movie.title}</h4>
                   <a href="#" data-id="${movie.id}" class="btn btn-primary btn-sm btn-details">More Details</a>
@@ -58,7 +58,7 @@ $(function(){
         var movieID = sessionStorage.getItem("movieId");
 
         $.ajax({
-            url: "http://api.themoviedb.org/3/movie/"+ movieID +"?api_key=373f333eb25d568d2a803ea7d3afb176&language=en-US",
+            url: "https://api.themoviedb.org/3/movie/"+ movieID +"?api_key=373f333eb25d568d2a803ea7d3afb176&language=en-US",
             type: "GET",
             success: function(response){
                 displaySpecificMovie(response);
@@ -76,7 +76,7 @@ $(function(){
         var template = `
         <div class="row mt-5">
             <div class="col-md-4">
-                <img src="http://image.tmdb.org/t/p/w185/${movie.poster_path}" alt="movie" id="img-movie">
+                <img src="https://image.tmdb.org/t/p/w185/${movie.poster_path}" alt="movie" id="img-movie">
             </div>
             <div class="col-md-8">
                 <h1 class="text-white mb-4">${movie.title}</h1>
@@ -113,7 +113,7 @@ $(function(){
         $(".movie").html(template);
 
         if(!movie.production_companies[0].logo_path === null){
-            $('#com-logo').attr("src", `http://image.tmdb.org/t/p/w185/${movie.production_companies[0].logo_path}`);
+            $('#com-logo').attr("src", `https://image.tmdb.org/t/p/w185/${movie.production_companies[0].logo_path}`);
         }else{
             $('#com-logo').attr("src", `build/images/no_image.png`); 
         }
