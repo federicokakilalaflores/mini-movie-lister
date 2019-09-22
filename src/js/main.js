@@ -110,13 +110,15 @@ $(function(){
         </div>
         `;
 
+        console.log(movie)
+
         $(".movie").html(template);
 
         if(!movie.production_companies[0].logo_path === null){
-            $('#com-logo').attr("src", `https://image.tmdb.org/t/p/w185/${movie.production_companies[0].logo_path}`);
+            $('#com-logo').attr("src", `build/images/no_image.png`);  
         }else{
-            $('#com-logo').attr("src", `build/images/no_image.png`); 
-        }
+            $('#com-logo').attr("src", `https://image.tmdb.org/t/p/w185/${movie.production_companies[0].logo_path}`);
+        } 
     }    
     
     getMovie();
